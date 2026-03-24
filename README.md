@@ -118,7 +118,7 @@ CREATE TABLE users (
 1. Clone the repository
 
 ```
-git clone https://github.com/YOUR_USERNAME/CampusFlow-backend.git
+git clone https://github.com/chandru2002-2/CampusFlow-backend.git
 ```
 
 2. Configure MySQL in `application.properties`
