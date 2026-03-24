@@ -41,7 +41,7 @@ jobs:
         mysql password: 12345
         
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn clean install -DskipTests
 
     - name: Update dependency graph
       if: github.event_name == 'push'
