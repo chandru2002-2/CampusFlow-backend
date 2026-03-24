@@ -16,21 +16,36 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    -  name: Build with Maven
-       run: mvn clean install
-       continue-on-error: true
 
-    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
+    - name: Set up MySQL
+      uses: mirromutth/mysql-action@v1.1
+      with:
+        mysql root password: 12345
+        mysql database: campusflow
+        mysql user: root
+        mysql password: 12345
+        
+    - name: Build with Maven
+      run: mvn clean install -DskipTests
+
     - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+      if: github.event_name == 'push'
+      uses: advanced-security/maven-dependency-submission-action@v3
+      with:
+        ignore-maven-wrapper: true
