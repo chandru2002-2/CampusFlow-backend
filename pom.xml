@@ -56,19 +56,12 @@
         </dependency>
 
         <!-- Lombok -->
-<<<<<<< HEAD
-     <dependency>
-     <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        
-    </dependency>
-=======
-         <dependency>
-           <groupId>org.projectlombok</groupId>
-          <artifactId>lombok</artifactId>
-          <version>1.18.32</version>
-         </dependency>
->>>>>>> e1a6adfa589d4b6010a7282147655879db5f63dc
+  <dependency>
+  <groupId>org.projectlombok</groupId>
+  <artifactId>lombok</artifactId>
+  <version>1.18.32</version>
+  <scope>provided</scope>
+</dependency>
 
         <!-- Swagger / OpenAPI (Spring Boot 3 compatible) -->
         <dependency>
@@ -120,7 +113,17 @@
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
+            <version>3.11.0</version>
+                <configuration>
+        <annotationProcessorPaths>
+            <path>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.32</version> <!-- Add the version here -->
+            </path>
+        </annotationProcessorPaths>
+    </configuration>
+        </plugin>
 
         <plugin>
             <groupId>org.springframework.boot</groupId>
