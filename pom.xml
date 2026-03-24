@@ -56,20 +56,11 @@
         </dependency>
 
         <!-- Lombok -->
-<<<<<<< HEAD
-  <dependency>
-  <groupId>org.projectlombok</groupId>
-  <artifactId>lombok</artifactId>
-  <version>1.18.32</version>
-  <scope>provided</scope>
-</dependency>
-=======
-         <dependency>
-           <groupId>org.projectlombok</groupId>
-          <artifactId>lombok</artifactId>
-          <version>1.18.32</version>
-         </dependency>
->>>>>>> 24a4c5f1e0e8caaa4162a3a64a97647e19049d8e
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
 
         <!-- Swagger / OpenAPI (Spring Boot 3 compatible) -->
         <dependency>
@@ -116,29 +107,21 @@
     </dependencies>
 
     <build>
-    <plugins>
+        <plugins>
 
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.11.0</version>
-                <configuration>
-        <annotationProcessorPaths>
-            <path>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.32</version> <!-- Add the version here -->
-            </path>
-        </annotationProcessorPaths>
-    </configuration>
-        </plugin>
+            <!-- Compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
 
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-        </plugin>
+            <!-- Spring Boot Plugin -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 
-    </plugins>
-</build>
+        </plugins>
+    </build>
 
 </project>
