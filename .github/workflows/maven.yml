@@ -46,5 +46,5 @@ jobs:
     - name: Update dependency graph
       if: github.event_name == 'push'
       uses: advanced-security/maven-dependency-submission-action@v3
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        ignore-maven-wrapper: true
