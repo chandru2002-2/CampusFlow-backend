@@ -1,6 +1,8 @@
 CampusFlow Backend
 A Spring Boot backend application for managing campus operations with JWT Authentication, Role-Based Authorization, and Full CRUD APIs.
+
 Features
+
 •	JWT Authentication (Login / Register)
 •	Role-Based Authorization (ADMIN / USER)
 •	User Management (CRUD APIs)
@@ -8,7 +10,9 @@ Features
 •	Pagination & Search
 •	MySQL Database Integration
 •	REST APIs tested via Postman / CLI
+
 Tech Stack
+
 •	Java 17
 •	Spring Boot 3
 •	Spring Security
@@ -16,6 +20,7 @@ Tech Stack
 •	MySQL
 •	JWT (io.jsonwebtoken)
 •	Maven
+
 Project Structure
 ```
 com.example.CampusFlow
@@ -28,7 +33,9 @@ com.example.CampusFlow
 ├── security       → JWT + Filters
 └── config         → Security configuration
 ```
+
 Authentication Flow
+
 •	User registers → password is hashed using BCrypt
 •	User logs in → JWT token is generated
 •	Token is sent in headers:
@@ -36,7 +43,9 @@ Authentication Flow
    Authorization: Bearer <TOKEN>
    ```
 •	Protected APIs validate token using JWT filter
+
 API Endpoints
+
  Auth APIs
 
 | Method | Endpoint       | Description       |
@@ -68,6 +77,7 @@ curl -X POST http://localhost:8080/auth/login ^
 -d "{\"email\":\"chandru@gmail.com\",\"password\":\"1234\"}"
 ```
 Database Schema
+
 ```
 CREATE TABLE users (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -78,6 +88,7 @@ CREATE TABLE users (
 );
 ```
 How to Run
+
 1.	Clone the repository
 ```
 git clone https://github.com/chandru2002-2/CampusFlow-backend.git
@@ -90,6 +101,7 @@ mvn spring-boot:run
 4.	Test APIs using Postman or CMD
 
 Future Enhancements
+
 •	Course Management Module
 •	Attendance System
 •	Fee Management
