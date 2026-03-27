@@ -1,22 +1,18 @@
-🚀 CampusFlow Backend
+CampusFlow Backend
 
 A Spring Boot backend application for managing campus operations with JWT Authentication, Role-Based Authorization, and Full CRUD APIs.
 
----
+Features
 
-🔥 Features
+JWT Authentication (Login / Register)
+Role-Based Authorization (ADMIN / USER)
+User Management (CRUD APIs)
+DTO Layer (Clean API responses)
+Pagination & Search
+MySQL Database Integration
+REST APIs tested via Postman / CLI
 
-🔐 JWT Authentication (Login / Register)
-🛡️ Role-Based Authorization (ADMIN / USER)
-👥 User Management (CRUD APIs)
-📄 DTO Layer (Clean API responses)
-🔍 Pagination & Search
-🗄️ MySQL Database Integration
-⚡ REST APIs tested via Postman / CLI
-
----
-
-🛠️ Tech Stack
+Tech Stack
 
 1.Java 17
 2.Spring Boot 3
@@ -26,9 +22,7 @@ A Spring Boot backend application for managing campus operations with JWT Authen
 6.JWT (io.jsonwebtoken)
 7.Maven
 
----
-
-📂 Project Structure
+Project Structure
 
 ```
 com.example.CampusFlow
@@ -42,9 +36,8 @@ com.example.CampusFlow
 └── config         → Security configuration
 ```
 
----
 
-🔐 Authentication Flow
+Authentication Flow
 
 1. User registers → password is hashed using BCrypt
 2. User logs in → JWT token is generated
@@ -57,9 +50,9 @@ com.example.CampusFlow
 
 ---
 
-📌 API Endpoints
+API Endpoints
 
- 🔹 Auth APIs
+ Auth APIs
 
 | Method | Endpoint       | Description       |
 | ------ | -------------- | ----------------- |
@@ -68,7 +61,7 @@ com.example.CampusFlow
 
 ---
 
-🔹 User APIs
+ User APIs
 
 | Method | Endpoint    | Access       |
 | ------ | ----------- | ------------ |
@@ -79,7 +72,7 @@ com.example.CampusFlow
 
 ---
 
-🧪 Sample CURL Commands
+ Sample CURL Commands
 
 Register
 
@@ -99,7 +92,7 @@ curl -X POST http://localhost:8080/auth/login ^
 
 ---
 
-🗄️ Database Schema
+Database Schema
 
 ```
 CREATE TABLE users (
@@ -113,7 +106,7 @@ CREATE TABLE users (
 
 ---
 
-🚀 How to Run
+How to Run
 
 1. Clone the repository
 
@@ -131,25 +124,22 @@ mvn spring-boot:run
 
 4. Test APIs using Postman or CMD
    
+Future Enhancements
 
-📈 Future Enhancements
-
-📚 Course Management Module
-📅 Attendance System
-💰 Fee Management
-🖥️ CLI-based Menu System
-🌐 Frontend Integration
-
+Course Management Module
+Attendance System
+Fee Management
+CLI-based Menu System
+Frontend Integration
 
 
-👨‍💻 Author
+Author
 
 Chandru M
 | MCA Student | Backend Developer
 
 
-
-⭐ If you like this project
+If you like this project
 
 Give it a ⭐ on GitHub and support!
 
